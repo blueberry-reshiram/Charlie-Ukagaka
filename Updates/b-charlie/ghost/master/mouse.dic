@@ -12,7 +12,7 @@ OnMouseDoubleClick
 				if love < 10
 				{
 					"\0\s[42]*Charlie backs away from you*"
-					"\0\s[40]*He looks at you, uncertain*"
+					"\0\s[40]*He looks at you,\w1 uncertain*"
 					"\0\s[40]*He doesn't like that*"
 					"\0\s[40]"
 					"\0\s[42]"
@@ -58,11 +58,11 @@ OnMouseMove.Sakura
 		if love < 10
 		{
 			"\0\s[42]*Charlie backs away from you*"
-			"\0\s[40]*He looks at you, uncertain*"
+			"\0\s[40]*He looks at you,\w1 uncertain*"
 			"\0\s[40]*He doesn't like that*"
 			"\0\s[40]"
 		}	
-		elseif love >= 10 && love < 20
+		elseif love >= 10 
 		{
 			"\0\s[44]\i[4]"
 			
@@ -74,18 +74,19 @@ OnMouseMove.Sakura
 	}
 	else
 	{
-		"%(petpositive)*You can feel the electricity.*"
+		
 		
 		if love < 10
 		{
+			"%(petpositive)*You can feel the electricity.*"
 			"\0\s[40]*Charlie doesn't know what to think of you*"
-			"\0\s[0]\i[1]*You pet Charlie. He's wary of you, but permits it.*"
+			"\0\s[0]\i[1]*You pet Charlie.\w2 He's wary of you, but permits it.*"
 		}
-		elseif love >= 10 && love < 20
+		elseif love >= 10 
 		{
 			"\0\s[43]*Charlie vibrates*"
 			"%(petpositive)*Charlie asks for more pets*"
-			"%(petpositive)*You pet Charlie. He likes it.*"
+			"%(petpositive)*You pet Charlie.\w2 He likes it.*"
 			
 			if nightmare == 1
 			{
