@@ -31,6 +31,7 @@ OnKeyPress
 OnSurfaceRestore
 {
 	"\0\s[0]"
+	"[\!set,alpha,100]"
 }
 
 //Happens when the ghost is unminimized. You *can* include dialogue, but you don't *have* to. I have included this event because if you don't, it defaults to \0\s[0]\1\s[10], which you don't want in some cases, such as if your ghost uses different surfaces or has a different number of characters.
@@ -50,7 +51,7 @@ OnWindowStateRestore
 //Tada! That's your url! Make sure you test it! The dev palette and script/network log can help with that
 On_homeurl
 {
-	""
+	"https://raw.githubusercontent.com/blueberry-reshiram/Charlie-Ukagaka/master/Updates/b-charlie/"
 }
 
 
