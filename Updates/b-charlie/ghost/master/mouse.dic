@@ -85,7 +85,7 @@ OnMouseMove.Sakura
 		elseif love >= 10 
 		{
 			"\0\s[43]*Charlie vibrates*"
-			"%(petpositive)*Charlie asks for more pets*"
+			"%(petpositive)*Charlie wants more pets*"
 			"%(petpositive)*You pet Charlie.\w2 He likes it.*"
 			
 			if nightmare == 1

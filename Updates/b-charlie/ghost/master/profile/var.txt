@@ -1,0 +1,10 @@
+Charset,UTF-8
+install,772470611
+homeurl_found,1
+surfacecount,17
+homeurl,https://raw.githubusercontent.com/blueberry-reshiram/Charlie-Ukagaka/master/Updates/b-charlie/
+update_result,OK(1)
+firstboot,772470611
+update_time,772475341
+commitmemorysize,345732
+lastboot,772481129

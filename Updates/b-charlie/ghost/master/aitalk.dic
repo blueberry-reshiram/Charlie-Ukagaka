@@ -37,38 +37,48 @@ RandomTalk : nonoverlap_pool
 
 OnMinuteChange
 {
-	if RAND(4) == 1
+	drowzy++
+	if drowzy > 60
+	{	
+		Sleep	
+	}
+	elseif drowzy > 40
 	{
-		Sleep
+		if RAND(2) == 1
+		{
+			Sleep
+		}
+	}
+	elseif drowzy > 20
+	{
+		if RAND(4) == 1
+		{	
+			Sleep
+		}
+		
 	}
 }
 
 
 Sleep
 {
-	if love = 10
+	if love >= 10 && drowzy >= 20
 	{
-		if drowzy == 20
+		if love >=19 && nightmare == 0
 		{
-			"\0\s[6]"
-			"\0\s[46]"
-			"\0\s[66]"
-			
-			if love >=19
-			{
-				if nightmare == 0
-				{
-					NightmareEvent
-				}
-			}
-			drowzy = 0
+			NightmareEvent
 		}
+		"\0\s[6]"
+		"\0\s[46]"
+		"\0\s[66]"
+		drowzy = 0
 	}
+	
 }
 
 NightmareEvent: all
 {
-	"\0\s[46]*... Charlie looks uncomfortable.* \_w[3000] \0\s[45]*Charlie woke up. He looks distressed*\n\n\w3*After a moment, he comes to you.*"
+	"\0\s[66]\b[2]*Charlie fell asleep*\__w[animation,6]\0\s[46]*... Charlie looks like he's having a bad dream.* \_w[300] \0\s[45]*Charlie woke up. He looks distressed*\n\n\w3*After a moment, he comes to you.*"
 	"\0\s[0]\b2\![set,autoscroll,disable]\_q"
 	"\*Do you want to comfort Charlie?\n\n"
     "\![*]\q[Yes,NightmareYes]  \![*]\q[No,NightmareNo]"
@@ -78,6 +88,7 @@ NightmareYes: all
 	nightmare = 1
 	"*You comfort Charlie by petting him and keeping him close.\w8\0\[61] After a bit, he calms down and falls asleep again.*"
 	"\0\s[66]"
+	drowzy = 0
 }
 NightmareNo: all
 {
