@@ -70,7 +70,7 @@ NightmareEvent: all
 {
 	"\0\s[46]*... Charlie looks uncomfortable.* \_w[3000] \0\s[45]*Charlie woke up. He looks distressed*\n\n *After a moment, he comes to you.*"
 	"\0\s[0]\b2\![set,autoscroll,disable]\_q"
-	"Do you want to comfort Charlie?\n\n"
+	"\*Do you want to comfort Charlie?\n\n"
     "\![*]\q[Yes,NightmareYes]  \![*]\q[No,NightmareNo]"
 }
 NightmareYes: all

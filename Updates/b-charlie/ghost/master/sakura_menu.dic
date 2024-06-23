@@ -79,18 +79,20 @@ OnResetConf: all
 }
 OnResetGo:all
 {
+    "\t"
 	"*You decide that it's better to make as if your time with Charlie never happened.\n"
 	"\0\s[0]\i[1]When Charlie isn't looking, you choose to reset and-*\n\b[-1]"
 	OnResetVars
 	reset++
 	OnFadeOut
-	"\w_[100]\![set,alpha,100]"
-	"\0\s[45]\b2\*Charlie appears on you screen. He looks quite startled. Poor boy.*"
+	"\c\b[-1]"
+	"\w_[100]\0\s[45]\b2\*\![set,alpha,100]*Charlie reappears on your screen. He looks quite startled. Poor boy. He doesn't remember you.*"
+	
 }
 
 OnTrueReset: all
 {
 	"\0\s[0]\b2\![set,autoscroll,disable]\_q"
-	"\![*]For developers and bug testing.\n If it's still there in the official release, pls let me know lol"
+	"\![*]For developers and bug testing.\n If it's still there in the official release, pls let me know lol \c"
 	OnFirstBoot
 }
