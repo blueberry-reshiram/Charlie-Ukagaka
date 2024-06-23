@@ -1,0 +1,69 @@
+OnFirstBoot
+{
+	stroke = 0
+	reset = 0
+	OnResetVars
+	"\0\s[45]*A little strange creature appears on you screen. He looks quite startled. His name is Charlie.*"
+}
+
+OnResetVars
+{
+	LastTalk = ""
+	petcount = 0 //counts how often you pet Charlie
+	pokecount = 0 
+	love = 0 //handles relationship
+	drowzy = 0 //likeliness to fall asleep
+	nightmare = 0 //if nightmare event happened, 0 false, 1 true
+}
+
+OnInitialize
+{
+	//If you want some variables to reset on boot, put them here. This event will happen even if you add other events like OnGhostChanged
+	//OnInitialize is a NOTIFY event! That means it cannot return scripts. This event is only meant for things like variable changes. See this page on Ukadoc for more info: https://ukagakadreamteam.github.io/ukadoc/manual/spec_shiori3.html
+	
+	//If you add new variables in updates, I recommend initializing them like so:
+	//if !ISVAR("NewVariable"); NewVariable = 0
+	//This means that it will only set the new variable if the user doesn't already have it, so that their variables don't get overwritten
+	
+	if reference0 != "reload" //For things you want to reset EXCEPT when just reloading; a convenience for you the dev, basically
+	{
+		LastTalk = ""
+	}
+}
+
+OnBoot
+{
+	_temp = SHIORI3FW.UserBirthday
+	_user_birthday = "%(_temp[1])/%(_temp[2])" //M/D, if you want it D/M you can switch it around
+	today = "%(month)/%(day)" //Again, switch this around if using D/M
+	
+	"\0\s[0]"
+	--
+	if _today == _user_birthday
+	{
+		"\0\s[43]*Charlie realizes it's your birthday. Happy birthday!*"
+	}
+	elseif _today == "1/1" //You can add whatever cool dates you want with more elseifs here
+	{
+		"\0\s[43]*Charlie realizes it's new year's day.\w8 Happy %(year),\w4 %(username).*"
+	}
+	else //Normal boot
+	{
+		"\0\s[3]*Charlie is happy to see you again.*"
+	}
+}
+
+OnClose
+{
+	"\0\s[60]\i[3]*Charlie is sad that you're closing him.*"
+	--
+	"\w8\w8\-" //This is what makes the ghost close (after a short pause), do not remove the \- , and MAKE SURE you don't use a \e before this point or it won't work
+}
+
+OnFadeOut: all
+{
+	for _i = 100; i > 0; _i--
+	{
+		"\![set,alpha,%(_i)]\_w[1000]"
+	}
+}

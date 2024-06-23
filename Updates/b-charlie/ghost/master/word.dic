@@ -1,0 +1,57 @@
+//Envelopes/word groups can be so much more than a simple basic list! Here's an example to make you think outside the box a little. To be used with dialogues like:
+//"I spent like 3 hours at the store the other day, looking for a shirt in %(favoredcolors). I found everything but, can you believe it?"
+//It gets fun because if it's a more mundane color, it's absurd they didn't have it. If it's one of the longer entries here though, why were you looking for that!! That's so oddly specific. But more generally, the kinds of things you add and the kinds of things you leave out can say a TON about a character. Like, this envelope here only has blues and grays. But maybe it could only have soft colors, or only very bold colors! Maybe all the entries are very clinical, or maybe they're long and rambly. Envelopes can say SO much about your character, have fun with them!
+
+happy
+{
+	"\0\s[3]"
+	"\0\s[43]"
+	"\0\s[63]"
+	"\0\s[3]\i[4]"
+	"\0\s[43]\i[4]"
+	"\0\s[63]\i[4]"
+}
+surprised
+{
+	"\0\s[5]"
+	"\0\s[45]"
+	"\0\s[65]"
+}
+angry
+{
+	"\0\s[2]"
+	"\0\s[42]"
+}
+
+petpositive
+{
+	"\0\s[1]"
+	"\0\s[3]"
+	"\0\s[61]"
+	"\0\s[63]"
+	"\0\s[3]\i[4]"
+	"\0\s[63]\i[4]"
+	"\0\s[4]"
+	"\0\s[4]\i[4]"
+}
+petpokeface
+{
+	"\0\s[42]"
+	"\0\s[44]"
+	"\0\s[45]"
+	"%(surprised)"
+}
+
+noise
+{
+	"bzzzzz"
+	"bzzzzzzzzzzzzzzzzzzzzzz"
+	"zzzzzzzzzzzzzzzzzzzzz"
+	"purrr"
+	"purrrrrrrrrrrrrrrrrrr"
+	"brrrr"
+	"brrrrrrrrrrrrrrrrrrrr"
+	"krzkrzrkrzrkrz"
+	"krzkrz"
+}
+//And if you're not interested in making word groups like this at all, you can just remove this whole file! Or use it for something else, you do you

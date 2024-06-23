@@ -1,0 +1,243 @@
+
+
+descript
+{
+	version,1
+}
+
+//—————————————————————————————— Sakura surfaces ——————————————————————————————
+
+//-----normal rings-----
+surface0
+{
+	
+}
+
+//closed eyes normal body
+surface1
+{
+	element0,overlay,surface0.png,0,0
+	element1,overlay,closed_eyes.png,0,0
+}
+//angry
+surface2
+{
+	element0,overlay,surface0.png,0,0
+	element1,overlay,angry_eyes.png,0,0
+}
+//happy
+surface3
+{
+	element0,overlay,surface0.png,0,0
+	element1,overlay,happy_eyes.png,0,0
+}
+//nye
+surface4
+{
+	element0,overlay,surface0.png,0,0
+	element1,overlay,nye_eyes.png,0,0
+}
+//surprised
+surface5
+{
+	element0,overlay,surface0.png,0,0
+	element1,overlay,surprised_eyes.png,0,0
+}
+//sleep
+surface6
+{
+	element0,overlay,surface0.png,0,0
+	element1,overlay,closed_eyes.png,0,0
+	
+	//zzz
+	animation6.interval,always
+	animation6.pattern0,overlay,210,500,0,0
+	animation6.pattern1,overlay,211,500,0,0
+}
+
+
+
+
+//-----rings up-----
+surface40
+{
+	element0,overlay,surface40.png,0,0
+	element1,overlay,default_eyes.png,0,0
+	element2,overlay,surface41.png,0,0
+}
+//closed eyes rings up
+surface41
+{
+	element0,overlay,surface40.png,0,0
+	element1,overlay,closed_eyes.png,0,0
+	element2,overlay,surface41.png,0,0
+}
+//angry
+surface42
+{
+	element0,overlay,surface40.png,0,0
+	element1,overlay,angry_eyes.png,0,0
+	element2,overlay,surface41.png,0,0
+}
+//happy
+surface43
+{
+	element0,overlay,surface40.png,0,0
+	element1,overlay,happy_eyes.png,0,0
+	element2,overlay,surface41.png,0,0
+}
+//nye
+surface44
+{
+	element0,overlay,surface40.png,0,0
+	element1,overlay,nye_eyes.png,0,0
+	element2,overlay,surface41.png,0,0
+}
+//surprised
+surface45
+{
+	element0,overlay,surface40.png,0,0
+	element1,overlay,surprised_eyes.png,0,0
+	element2,overlay,surface41.png,0,0
+}
+//sleep
+surface46
+{
+	element0,overlay,surface0.png,0,0
+	element1,overlay,closed_eyes.png,0,0
+	element2,overlay,surface41.png,0,0
+	
+	//zzz
+	animation6.interval,always
+	animation6.pattern0,overlay,210,500,0,0
+	animation6.pattern1,overlay,211,500,0,0
+}
+
+
+
+
+
+//-----rings low-----
+surface60
+{
+}
+//closed eyes rings low
+surface61
+{
+	element0,overlay,surface60.png,0,0
+	element1,overlay,closed_eyes.png,0,0
+}
+//angry
+surface62
+{
+	element0,overlay,surface60.png,0,0
+	element1,overlay,angry_eyes.png,0,0
+}
+//happy
+surface63
+{
+	element0,overlay,surface60.png,0,0
+	element1,overlay,happy_eyes.png,0,0
+}
+//nye
+surface64
+{
+	element0,overlay,surface60.png,0,0
+	element1,overlay,nye_eyes.png,0,0
+}
+//surprised
+surface65
+{
+	element0,overlay,surface60.png,0,0
+	element1,overlay,surprised_eyes.png,0,0
+}
+//sleep
+surface66
+{
+	element0,overlay,surface0.png,0,0
+	element1,overlay,closed_eyes.png,0,0
+	
+	//zzz
+	animation6.interval,always
+	animation6.pattern0,overlay,210,500,0,0
+	animation6.pattern1,overlay,211,500,0,0
+}
+
+
+
+
+//-----appending stuff-----
+//collisions
+surface.append0-6
+{
+	collision0,83,76,124,98,head
+	collision1,73,101,110,130,face
+	collision2,128,42,190,150,ring
+	collision3,54,146,142,184,ring
+	collision4,36,41,83,91,ring
+	collision5,4,92,66,126,ring
+}
+surface.append40-46
+{
+	collision2,113,35,156,88,ring
+	collision3,51,140,148,176,ring
+	collision4,44,43,98,82,ring
+}
+surface.append60-66
+{
+	collision0,83,76,124,98,head
+	collision1,73,101,110,130,face
+}
+
+surface.append60-66
+{
+	collision2,131,44,186,152,ring
+	collision3,55,151,152,187,ring
+	collision4,27,59,75,106,ring
+	collision5,6,107,57,152,ring	
+}
+
+//animations
+surface.append0,60
+{
+	//default eyes
+	animation0.interval,runonce,0
+	animation0.pattern0,overlay,110,0,0,0
+	
+	//looking right
+	animation1.interval,random,500
+	animation1.pattern0,overlay,113,0,0,0
+	animation1.pattern1,overlay,-1,5000,0,0
+	
+	//looking up
+	animation2.interval,random,500
+	animation2.pattern0,overlay,112,0,0,0
+	animation2.pattern1,overlay,-1,5000,0,0
+	
+	//looking down
+	animation3.interval,random,500
+	animation3.pattern0,overlay,111,0,0,0
+	animation3.pattern1,overlay,-1,5000,0,0
+}
+surface.append0-5,40-45,60-65
+{
+	//blush
+	animation4.interval,never
+	animation4.pattern0,overlay,220,0,0,0
+}
+
+
+
+//-----cursor stuff-----
+sakura.cursor
+{
+	mouseup0,head,system:hand
+	mouseup1,Face,system:hand
+	mouseup2,ring,system:hand
+	mouseup3,ring,system:hand
+	mouseup4,ring,system:hand
+	mouseup5,ring,system:hand
+	mousedown1,Face,system:finger  
+}
+
+//—————————————————————————————— Kero surfaces ——————————————————————————————

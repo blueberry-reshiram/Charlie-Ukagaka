@@ -1,0 +1,96 @@
+SakuraMenuGreetings : nonoverlap
+{
+	"\0\s[0]*Charlie pays attention*"
+	"\0\s[4]*You clicked on Charlie*"
+}
+
+//Because there is an all modifier here, you don't need to write -- between menu options
+OnSakuraMenu : all
+{
+	"\0\s[0]\b2\![set,autoscroll,disable]" //?
+	if SHIORI3FW.Eventid == "OnMouseDoubleClick"; SakuraMenuGreetings //The check here is so they won't comment if you click the back button. Remove if you prefer
+	
+	"\n\n\_q"
+	//menu label, function called when clicked
+	"\![*]\q[Talk to me,OnAiTalk]"
+	if LastTalk != ""; "  \![*]\q[Say that again,OnLastTalk]"
+	"\n\n"
+	
+	"\![*]\q[Change talk rate,OnTalkRateMenu]\n\n"
+	"\![*]\q[Check stats,OnStats]\n\n"
+	"\![*]\q[Reset relationship,OnResetConf] or \![*]\q[True Reset,OnTrueReset]\n\n"
+	
+	"\![*]\q[Nevermind,blank]"	
+}
+
+OnLastTalk
+{
+	LastTalk
+}
+
+OnTalkRateMenu : all
+{	
+	//This is just setting up a label, you may need to add to it or tweak it if you change what rates are available
+	_talkrate = "Off"
+	if aitalkinterval == 30; _talkrate = "30 seconds"
+	elseif aitalkinterval == 60; _talkrate = "1 minute"
+	elseif aitalkinterval == 180; _talkrate = "3 minutes"
+	elseif aitalkinterval == 300; _talkrate = "5 minutes"
+	elseif aitalkinterval == 600; _talkrate = "10 minutes"
+	//checks what the current talkrate is and makes it a string
+	
+	"\0\s[0]\b2\![set,autoscroll,disable]\_q" //?
+	"Current interval: %(_talkrate)\n\n"
+	
+	"\![*]\q[Off,OnTalkRateChange,0]\n"
+	"\![*]\q[30 seconds,OnTalkRateChange,30]\n"
+	"\![*]\q[1 minute,OnTalkRateChange,60]\n"
+	"\![*]\q[3 minutes,OnTalkRateChange,180]\n"
+	"\![*]\q[5 minutes,OnTalkRateChange,300]\n"
+	"\![*]\q[10 minutes,OnTalkRateChange,600]\n"
+	"\n"
+	"\![*]\q[Back,OnSakuraMenu]  \![*]\q[Nevermind,blank]"
+}
+
+OnTalkRateChange
+{
+	aitalkinterval = TOINT(reference0)
+}
+
+OnStats: all
+{
+	"\0\s[0]\b2\![set,autoscroll,disable]\_q"
+	"You've pet Charlie %(petcount) time(s).\n"
+	"You poked Charlie %(pokecount) time(s). \n\n"
+	"You have reset %(reset) time(s). \n"
+	
+	if nightmare == 1
+	{
+		"\![*]You comforted Charlie after he had a nightmare.\n"
+    }		
+}
+
+OnResetConf: all
+{
+	//asking for confirmation
+	"\0\s[0]\b2\![set,autoscroll,disable]\_q"
+	"Are you sure that you want to reset your relationship with Charlie?\n\n"
+    "\![*]\q[Yes,OnResetGo]  \![*]\q[No,blank]"
+}
+OnResetGo:all
+{
+	"*You decide that it's better to make as if your time with Charlie never happened.\n"
+	"\0\s[0]\i[1]When Charlie isn't looking, you choose to reset and-*\n\b[-1]"
+	OnResetVars
+	reset++
+	OnFadeOut
+	"\0\s[45]\b2\*Charlie appears on you screen. He looks quite startled. Poor boy.*"
+	"\![set,alpha,100]"
+}
+
+OnTrueReset: all
+{
+	"\0\s[0]\b2\![set,autoscroll,disable]\_q"
+	"\![*]For developers and bug testing.\n If it's still there in the official release, pls let me know lol"
+	OnFirstBoot
+}

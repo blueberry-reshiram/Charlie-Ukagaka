@@ -1,0 +1,120 @@
+//Separate from the menus because you could put other interactions here, like poking or booping or punching or asking about various hotspots
+OnMouseDoubleClick
+{
+	if reference5 == 0 //reference5 is the mouse button being clicked, in this case a left click
+	{
+		//reference3 is which character is being clicked
+		//If you want to add double click interactions, reference4 will be the name of the hitbox the mouse is over
+		if reference3 == 0
+		{
+			if reference4 == "face"
+			{
+				if love < 10
+				{
+					"\0\s[42]*Charlie backs away from you*"
+					"\0\s[40]*He looks at you, uncertain*"
+					"\0\s[40]*He doesn't like that*"
+					"\0\s[40]"
+					"\0\s[42]"
+					love--
+				}	
+				elseif love >= 10 
+				{
+					"\0\s[44]\i[4]"
+			
+				}
+				pokecount++
+			}
+			else
+			{
+				OnSakuraMenu
+			}
+		}
+	}
+}
+
+OnMouseMove
+{
+	if reference4 != ""
+	//reference4 is collision identifier name
+	//if reference4 not empty, assume it's pet and increase pet counter
+	{
+		stroke++
+		
+		if stroke % 40 == 0
+		{
+			if reference3 == 0; OnMouseMove.Sakura 
+			//reference3 is 0 for maincharacter, 1 for side character
+			//if main character pet, do mc dialogue, else side kick dialogue
+			
+		}
+	}
+}
+
+OnMouseMove.Sakura
+{
+	if reference4 == "face"
+	{
+		if love < 10
+		{
+			"\0\s[42]*Charlie backs away from you*"
+			"\0\s[40]*He looks at you, uncertain*"
+			"\0\s[40]*He doesn't like that*"
+			"\0\s[40]"
+		}	
+		elseif love >= 10 && love < 20
+		{
+			"\0\s[44]\i[4]"
+			
+			if nightmare == 1
+			{
+				
+			}
+		}
+	}
+	else
+	{
+		"%(petpositive)*You can feel the electricity.*"
+		
+		if love < 10
+		{
+			"\0\s[40]*Charlie doesn't know what to think of you*"
+			"\0\s[0]\i[1]*You pet Charlie. He's wary of you, but permits it.*"
+		}
+		elseif love >= 10 && love < 20
+		{
+			"\0\s[43]*Charlie vibrates*"
+			"%(petpositive)*Charlie asks for more pets*"
+			"%(petpositive)*You pet Charlie. He likes it.*"
+			
+			if nightmare == 1
+			{
+				"\0\s[61]*Charlie is at ease.*"
+				"\0\s[61]*Charlie trusts you.*"
+				drowzy++
+			}
+			
+			drowzy++
+		}
+		
+		
+		
+		
+		
+		//character, surface, dialogue
+		
+		petcount++
+		if love < 20
+		{
+			love = petcount/2
+		}
+	}
+	
+}
+
+
+OnMouseLeaveAll
+//if mouse doesn't touch character anymore
+{
+	stroke = 0
+}

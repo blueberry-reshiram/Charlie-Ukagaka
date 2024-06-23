@@ -1,0 +1,5 @@
+2charset,UTF-8
+type,ghost
+
+name,Charlie
+directory,b-charlie
