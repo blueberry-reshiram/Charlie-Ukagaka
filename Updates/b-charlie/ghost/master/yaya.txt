@@ -15,7 +15,6 @@ dic, meta.dic
 dic, other.dic
 dic, sakura_menu.dic
 dic, word.dic
-dic, string.dic
 
 msglang,english
 
