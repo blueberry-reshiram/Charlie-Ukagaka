@@ -84,8 +84,8 @@ OnResetGo:all
 	OnResetVars
 	reset++
 	OnFadeOut
+	"\w_[100]\![set,alpha,100]"
 	"\0\s[45]\b2\*Charlie appears on you screen. He looks quite startled. Poor boy.*"
-	"\![set,alpha,100]"
 }
 
 OnTrueReset: all

@@ -62,7 +62,7 @@ OnClose
 
 OnFadeOut: all
 {
-	for _i = 100; i < 0; _i--
+	for _i = 100; _i < 0; _i--
 	{
 		"\![set,alpha,%(_i)]\_w[80]"
 	}
