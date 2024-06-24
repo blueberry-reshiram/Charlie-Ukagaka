@@ -12,6 +12,6 @@ craftmanurl,
 sakura.name,Charlie
 kero.name,
 
-icon,icon.ico
+icon,
 
 sstp.allowunspecifiedsend,0
