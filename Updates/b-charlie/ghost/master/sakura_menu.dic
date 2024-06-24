@@ -19,7 +19,7 @@ OnSakuraMenu : all
 	"\![*]\q[Change talk rate,OnTalkRateMenu]\n"
 	"\![*]\q[Check stats,OnStats]\n\n"
 	"\![*]\q[Reset relationship,OnResetConf]\n\n"
-	"\![*]\q[Nightmare,OnNightmareEvent] or \![*]\q[True Reset,OnTrueReset]\n\n"
+//	"\![*]\q[Nightmare,OnNightmareEvent] or \![*]\q[True Reset,OnTrueReset]\n\n"
 	
 	"\![*]\q[Nevermind,blank]"	
 }
