@@ -28,6 +28,7 @@ OnInitialize
 	if reference0 != "reload" //For things you want to reset EXCEPT when just reloading; a convenience for you the dev, basically
 	{
 		LastTalk = ""
+		drowzy = 0
 	}
 }
 

@@ -16,10 +16,10 @@ OnSakuraMenu : all
 	if LastTalk != ""; "  \![*]\q[Say that again,OnLastTalk]"
 	"\n\n"
 	
-	"\![*]\q[Change talk rate,OnTalkRateMenu]\n\n"
+	"\![*]\q[Change talk rate,OnTalkRateMenu]\n"
 	"\![*]\q[Check stats,OnStats]\n\n"
 	"\![*]\q[Reset relationship,OnResetConf]\n\n"
-//	"\![*]\q[Reset relationship,OnResetConf] or \![*]\q[True Reset,OnTrueReset]\n\n"
+	"\![*]\q[Nightmare,NightmareEvent] or \![*]\q[True Reset,OnTrueReset]\n\n"
 	
 	"\![*]\q[Nevermind,blank]"	
 }
@@ -87,13 +87,13 @@ OnResetGo:all
 	reset++
 	OnFadeOut
 	"\c\b[-1]"
-	"\w_[100]\0\s[45]\b2\*\![set,alpha,100]*Charlie reappears on your screen. He looks quite startled. Poor boy. He doesn't remember you.*"
+	"\w_[100]\0\s[45]\b1\*\![set,alpha,100]*Charlie reappears on your screen. He looks quite startled. Poor boy. He doesn't remember you.*"
 	
 }
 
-//OnTrueReset: all
-//{
-//	"\0\s[0]\b2\![set,autoscroll,disable]\_q"
-//	"\![*]For developers and bug testing.\n If it's still there in the official release, pls let me know lol \c"
-//	OnFirstBoot
-//}
+OnTrueReset: all
+{
+	"\0\s[0]\b1\![set,autoscroll,disable]\_q"
+	"\![*]For developers and bug testing.\n If it's still there in the official release, pls let me know lol \c"
+	OnFirstBoot
+}
