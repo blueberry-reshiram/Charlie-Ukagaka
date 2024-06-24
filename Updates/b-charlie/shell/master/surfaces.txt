@@ -103,7 +103,7 @@ surface45
 //sleep
 surface46
 {
-	element0,overlay,surface0.png,0,0
+	element0,overlay,surface40.png,0,0
 	element1,overlay,closed_eyes.png,0,0
 	element2,overlay,surface41.png,0,0
 	
@@ -154,7 +154,7 @@ surface65
 //sleep
 surface66
 {
-	element0,overlay,surface0.png,0,0
+	element0,overlay,surface60.png,0,0
 	element1,overlay,closed_eyes.png,0,0
 	
 	//zzz

@@ -1,5 +1,5 @@
 charlie ghost.png394a374484e3186b47e77fe25583a23asize=56431date=2024-06-23T09:06:44charset=OSNative
-ghost/master/aitalk.dicb4181b8929634212e373bfb1dc08487csize=1682date=2024-06-24T09:06:29
+ghost/master/aitalk.dic7400742acdb25b29cdaf92baa78967acsize=1712date=2024-06-24T09:55:49
 ghost/master/boot.dic19948e505f03d7d3d6b6c206e79bf1d1size=2181date=2024-06-24T08:55:09
 ghost/master/descript.txtc0f4f1891e55786175b112d178430e74size=200date=2024-06-22T21:59:13
 ghost/master/emerg.dic5a410df0da687d88d397cdfa6fdcf1absize=382date=2024-06-22T22:26:31
@@ -8,7 +8,7 @@ ghost/master/kero_menu.dic89a0e6891461ade8c2547c3e399b7d45size=1113date=2024-
 ghost/master/meta.dic2b5b74ccc7d3808709475f1570d927b9size=6010date=2024-03-06T04:42:27
 ghost/master/mouse.dicf763abd5e1f374e118388789135f893esize=2311date=2024-06-23T19:35:53
 ghost/master/other.dic80006bca4cb7a85cdffd827c78cd6bf5size=4896date=2024-06-23T18:40:17
-ghost/master/sakura_menu.dic590dfee628137383a6643ef2d8ad9145size=2969date=2024-06-24T09:03:20
+ghost/master/sakura_menu.dic3cf68996056894bad25dfd6ec8589868size=2971date=2024-06-24T09:31:57
 ghost/master/string.dic886e0712546b9bf2e9b378d3250f8e4csize=167date=2024-06-23T15:05:52
 ghost/master/word.dic704b2b36ad5444624fdebb2892b7285asize=1615date=2024-06-23T13:38:50
 ghost/master/yaya.dllfa8bac5d6d7346524317f731dc63803dsize=880640date=2024-02-04T08:07:55
@@ -39,6 +39,6 @@ shell/master/surface220.pngc89feca49ba444b2f979ba26327ffff9size=2239date=2024
 shell/master/surface40.png0461c728cec98f9b8a5c9581f741002esize=12237date=2024-06-22T17:02:31
 shell/master/surface41.pngc37900522d298676e85c0c46a6598eccsize=26261date=2024-06-22T17:02:18
 shell/master/surface60.png188301a6ec92250df0cc2127654d2ccasize=40266date=2024-06-22T14:54:39
-shell/master/surfaces.txt5f9e567c097d2958bf405412bf7da2e6size=4703date=2024-06-23T13:46:20
+shell/master/surfaces.txt98c563da6f5b656fbb568b7918ac8466size=4705date=2024-06-24T09:31:13
 shell/master/surprised_eyes.pnge000be8eb592de57ce20154f2fcba5e2size=7062date=2024-06-22T14:50:03
 thumbnail.pnge9d70265d8fc7576e19dc311ef1f7446size=34142date=2024-06-22T22:18:09

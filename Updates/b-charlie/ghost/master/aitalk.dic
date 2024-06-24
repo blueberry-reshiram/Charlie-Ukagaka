@@ -81,19 +81,19 @@ Sleep
 
 OnNightmareEvent: all
 {
-	"\0\s[66]*Charlie fell asleep*\__w[animation,6]\0\s[46]*... Charlie looks like he's having a bad dream.* \_w[300] \0\s[45]*Charlie woke up. He looks distressed*\n\n\w3*After a moment, he comes to you.*"
-	"\0\s[0]\b2\![set,autoscroll,disable]\_q"
-	"\*Do you want to comfort Charlie?\n\n"
+	"\t\*\0\s[66]*Charlie fell asleep*\n\__w[animation,6]\w9\0\s[46]*... He looks like he's having a bad dream.*\w9\n\n\__w[animation,6]\0\s[45]*He woke up. He looks distressed*\n\w3*Slowly, he comes to you.*\w3\n\n"
+	"\0\s[0]\b1\![set,autoscroll,disable]"
+	"\0\s[45]Do you want to comfort Charlie?\n\n"
     "\![*]\q[Yes,OnNightmareYes]  \![*]\q[No,OnNightmareNo]"
 }
 OnNightmareYes: all
 {
 	nightmare = 1
-	"*You comfort Charlie by petting him and keeping him close.\w8\0\[61] After a bit, he calms down and falls asleep again.*"
+	"\0\s[45]*You comfort Charlie by petting him and keeping him close.\w8\0\s[61] After a bit, he calms down and falls asleep again.*"
 	"\0\s[66]"
 	drowzy = 0
 }
 OnNightmareNo: all
 {
-	"*You decide not to comfort Charlie.\w5 \0\s[60]\i[3]After a bit, he leaves.*"
+	"\0\s[45]*You decide not to comfort Charlie.\w5 \0\s[60]\i[3]After a bit, he leaves.*"
 }

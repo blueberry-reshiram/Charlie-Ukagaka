@@ -19,7 +19,7 @@ OnSakuraMenu : all
 	"\![*]\q[Change talk rate,OnTalkRateMenu]\n"
 	"\![*]\q[Check stats,OnStats]\n\n"
 	"\![*]\q[Reset relationship,OnResetConf]\n\n"
-	"\![*]\q[Nightmare,NightmareEvent] or \![*]\q[True Reset,OnTrueReset]\n\n"
+	"\![*]\q[Nightmare,OnNightmareEvent] or \![*]\q[True Reset,OnTrueReset]\n\n"
 	
 	"\![*]\q[Nevermind,blank]"	
 }
@@ -74,7 +74,7 @@ OnStats: all
 OnResetConf: all
 {
 	//asking for confirmation
-	"\0\s[0]\b2\![set,autoscroll,disable]\_q"
+	"\0\s[0]\b1\![set,autoscroll,disable]\_q"
 	"Are you sure that you want to reset your relationship with Charlie?\n\n"
     "\![*]\q[Yes,OnResetGo]  \![*]\q[No,blank]"
 }
